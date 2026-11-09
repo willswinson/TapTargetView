@@ -48,5 +48,8 @@ import com.vanniktech.maven.publish.SonatypeHost
 mavenPublishing {
     configure(new AndroidSingleVariantLibrary("release", true, true))
     publishToMavenCentral(SonatypeHost.DEFAULT, true)
-    signAllPublications()
+    // JitPack has no signing keys, so only sign when publishing anywhere else
+    if (System.getenv("JITPACK") == null) {
+        signAllPublications()
+    }
 }

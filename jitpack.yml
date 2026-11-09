@@ -1,4 +1,4 @@
 jdk:
   - openjdk17
 install:
-  - ./gradlew :taptargetview:publishToMavenLocal -x javadoc -x signMavenPublication
+  - ./gradlew :taptargetview:publishToMavenLocal -x javadoc
